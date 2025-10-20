@@ -87,7 +87,6 @@ public class Lesson_2 {
         } else {
             System.out.println("false");
         }
-
     }
 
     public static void printString() {
