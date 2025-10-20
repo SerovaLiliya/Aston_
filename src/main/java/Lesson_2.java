@@ -18,9 +18,7 @@ public class Lesson_2 {
             System.out.print(i + " ");
         }
 
-
     }
-
     public static void printThreeWords() {
         System.out.println("1.");
         System.out.println("Orange");
