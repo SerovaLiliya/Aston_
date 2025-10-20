@@ -25,7 +25,6 @@ public class Lesson_2 {
         System.out.println("Banana");
         System.out.println("Apple");
     }
-
     public static void checkSumSign() {
         int a = 20;
         int b = 30;
