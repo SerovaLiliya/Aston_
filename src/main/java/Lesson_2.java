@@ -78,7 +78,6 @@ public class Lesson_2 {
             System.out.println("Отрицательное число");
         }
     }
-
     public static void numb() {
         int a = -5;
         System.out.println("7.");
