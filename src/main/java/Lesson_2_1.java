@@ -4,21 +4,20 @@ public class Lesson_2_1 {
         checkSumSign();
         printColor();
         compareNumbers();
-        summa();
+        System.out.println(summa());
         printNumber();
-        numb();
+        System.out.println(numb());
         printString();
         System.out.println(leapYear(2025));
         flipArray();
         fillArray();
         multiplyIfLessThan6();
         fillDiagonal();
-        int[] resultArray = createArray(5, 7);         // массив из 5 элементов, все 7
+
+        int[] resultArray = createArray(5, 7); // массив из 5 элементов, все 7
         for (int i : resultArray) {
             System.out.print(i + " ");
         }
-
-
     }
 
     public static void printThreeWords() {
@@ -63,12 +62,12 @@ public class Lesson_2_1 {
         }
     }
 
-    public static void summa() {
+    public static boolean summa() {
+        System.out.println("5.");
         int a = 4;
         int b = 10;
         int c = (a + b);
-        System.out.println("5.");
-        System.out.println(c >= 10 && c <= 20);
+        return c >= 10 && c <= 20;
     }
 
     public static void printNumber() {
@@ -81,15 +80,10 @@ public class Lesson_2_1 {
         }
     }
 
-    public static void numb() {
-        int a = -5;
+    public static boolean numb() {
         System.out.println("7.");
-        if (a < 0) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
-
+        int a = -5;
+        return a < 0;
     }
 
     public static void printString() {
@@ -99,10 +93,12 @@ public class Lesson_2_1 {
         for (int i = 0; i < times; i++)
             System.out.println(str);
     }
+
     public static boolean leapYear(int year) {
         System.out.println("9.");
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
+
     public static void flipArray() {
         System.out.println("10.");
         int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
@@ -114,6 +110,7 @@ public class Lesson_2_1 {
         }
         System.out.println();
     }
+
     public static void fillArray() {
         System.out.println("11.");
         int[] arr = new int[100];
@@ -125,6 +122,7 @@ public class Lesson_2_1 {
         }
         System.out.println();
     }
+
     public static void multiplyIfLessThan6() {
         System.out.println("12.");
         int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
@@ -138,6 +136,7 @@ public class Lesson_2_1 {
         }
         System.out.println();
     }
+
     public static void fillDiagonal() {
         System.out.println("13.");
         int size = 5;
@@ -152,6 +151,7 @@ public class Lesson_2_1 {
             System.out.println();
         }
     }
+
     public static int[] createArray(int len, int initialValue) {
         System.out.println("14.");
         int[] arr = new int[len];
@@ -161,20 +161,3 @@ public class Lesson_2_1 {
         return arr;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
