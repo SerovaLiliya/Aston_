@@ -21,3 +21,4 @@ public class Animal {
         return animalCount;
     }
 }
+
