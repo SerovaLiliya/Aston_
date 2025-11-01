@@ -1,6 +1,6 @@
 package Lesson_7;
 
-public class FactorialCalculator {
+public class FactorialCalculator  {
     public static long factorial(int n) {
         if (n < 0) throw new IllegalArgumentException("Negative number");
         long result = 1;

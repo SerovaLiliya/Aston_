@@ -3,7 +3,7 @@ package Lesson_7;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class FactorialCalculatorTest {
+class FactorialCalculatorTest  {
 
     @Test
     void testFactorialOf5() {
