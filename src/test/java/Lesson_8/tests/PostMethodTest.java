@@ -11,7 +11,6 @@ public class PostMethodTest {
     @Test
     void testPostRequest() {
         String requestBody = "{ \"name\": \"John\", \"age\": 30 }";
-
         Response response = given()
                 .baseUri("https://postman-echo.com")
                 .header("Content-Type", "application/json")
@@ -23,7 +22,6 @@ public class PostMethodTest {
                 .body("data.name", equalTo("John"))
                 .body("data.age", equalTo(30))
                 .extract().response();
-
         System.out.println(response.prettyPrint());
     }
 }

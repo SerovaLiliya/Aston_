@@ -11,7 +11,6 @@ public class PutMethodTest {
     @Test
     void testPutRequest() {
         String body = "{ \"update\": true }";
-
         Response response = given()
                 .baseUri("https://postman-echo.com")
                 .header("Content-Type", "application/json")
@@ -22,7 +21,6 @@ public class PutMethodTest {
                 .statusCode(200)
                 .body("data.update", equalTo(true))
                 .extract().response();
-
         System.out.println(response.prettyPrint());
     }
 }

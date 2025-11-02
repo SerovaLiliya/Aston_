@@ -18,7 +18,6 @@ public class DeleteMethodTest {
                 .statusCode(200)
                 .body("url", containsString("/delete"))
                 .extract().response();
-
         System.out.println(response.prettyPrint());
     }
 }

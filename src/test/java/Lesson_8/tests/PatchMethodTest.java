@@ -11,7 +11,6 @@ public class PatchMethodTest {
     @Test
     void testPatchRequest() {
         String body = "{ \"patch\": true }";
-
         Response response = given()
                 .baseUri("https://postman-echo.com")
                 .header("Content-Type", "application/json")
@@ -22,7 +21,6 @@ public class PatchMethodTest {
                 .statusCode(200)
                 .body("data.patch", equalTo(true))
                 .extract().response();
-
         System.out.println(response.prettyPrint());
     }
 }

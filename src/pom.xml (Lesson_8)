@@ -7,8 +7,7 @@
     <groupId>com.example</groupId>
     <artifactId>aston-project</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <properties>
+<properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <junit.jupiter.version>5.11.3</junit.jupiter.version>
