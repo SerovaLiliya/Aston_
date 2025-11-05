@@ -7,7 +7,6 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class PutMethodTest {
-
     @Test
     void testPutRequest() {
         String body = "{ \"update\": true }";

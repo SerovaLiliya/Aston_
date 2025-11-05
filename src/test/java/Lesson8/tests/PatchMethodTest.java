@@ -7,7 +7,6 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class PatchMethodTest {
-
     @Test
     void testPatchRequest() {
         String body = "{ \"patch\": true }";

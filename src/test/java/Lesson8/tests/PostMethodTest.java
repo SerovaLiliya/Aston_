@@ -7,7 +7,6 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class PostMethodTest {
-
     @Test
     void testPostRequest() {
         String requestBody = "{ \"name\": \"John\", \"age\": 30 }";
