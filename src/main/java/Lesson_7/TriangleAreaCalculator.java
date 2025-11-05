@@ -1,4 +1,4 @@
-package Lesson_7;
+package Lesson7;
 
 public class TriangleAreaCalculator {
     public static double area(double a, double b, double c) {
