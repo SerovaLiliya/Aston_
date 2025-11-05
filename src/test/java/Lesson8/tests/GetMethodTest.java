@@ -1,6 +1,6 @@
-package Lesson_8.tests;
+package Lesson8.tests;
 
-import Lesson_8.Base.BaseTest;
+import Lesson8.Base.BaseTest;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;

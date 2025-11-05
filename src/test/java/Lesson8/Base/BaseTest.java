@@ -1,4 +1,4 @@
-package Lesson_8.Base;
+package Lesson8.Base;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;

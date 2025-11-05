@@ -1,4 +1,4 @@
-package Lesson_8.tests;
+package Lesson8.tests;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
@@ -6,21 +6,17 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class PostMethodTest {
+public class DeleteMethodTest {
 
     @Test
-    void testPostRequest() {
-        String requestBody = "{ \"name\": \"John\", \"age\": 30 }";
+    void testDeleteRequest() {
         Response response = given()
                 .baseUri("https://postman-echo.com")
-                .header("Content-Type", "application/json")
-                .body(requestBody)
                 .when()
-                .post("/post")
+                .delete("/delete")
                 .then()
                 .statusCode(200)
-                .body("data.name", equalTo("John"))
-                .body("data.age", equalTo(30))
+                .body("url", containsString("/delete"))
                 .extract().response();
         System.out.println(response.prettyPrint());
     }
