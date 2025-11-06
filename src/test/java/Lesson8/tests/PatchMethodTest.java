@@ -10,7 +10,7 @@ public class PatchMethodTest {
     @Test
     void testPatchRequest() {
         String body = "{ \"patch\": true }";
-        Response response = given ()
+        Response response = given()
                 .baseUri("https://postman-echo.com")
                 .header("Content-Type", "application/json")
                 .body(body)
