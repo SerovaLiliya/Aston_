@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.*;
 
 public class DeleteMethodTest {
     @Test
-    void testDeleteRequest () {
+    void testDeleteRequest() {
         Response response = given()
                 .baseUri("https://postman-echo.com")
                 .when()
