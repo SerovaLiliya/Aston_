@@ -10,7 +10,7 @@ public class PostMethodTest {
     @Test
     void testPostRequest() {
         String requestBody = "{ \"name\": \"John\", \"age\": 30 }";
-        Response response = given()
+        Response response = given ()
                 .baseUri("https://postman-echo.com")
                 .header("Content-Type", "application/json")
                 .body(requestBody)

@@ -10,7 +10,7 @@ public class PutMethodTest {
     @Test
     void testPutRequest() {
         String body = "{ \"update\": true }";
-        Response response = given()
+        Response response = given ()
                 .baseUri("https://postman-echo.com")
                 .header("Content-Type", "application/json")
                 .body(body)

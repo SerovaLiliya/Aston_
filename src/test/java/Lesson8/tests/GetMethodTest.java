@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.*;
 
 public class GetMethodTest extends BaseTest  {
     @Test
-    void testGetMethod() {
+    void testGetMethod () {
         given()
                 .when()
                 .get("/get")
