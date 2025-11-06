@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class BaseTest  {
     @BeforeAll
-    public static void  setup() {
+    public static void setup () {
         RestAssured.baseURI = "https://postman-echo.com";
     }
 }
