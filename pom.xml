@@ -3,12 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>postman-echo-tests</artifactId>
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
     <artifactId>Lesson_7</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Postman Echo Tests</name>
 
     <properties>
         <!-- ✅ Используем Java 21 -->
@@ -16,9 +21,20 @@
         <maven.compiler.target>21</maven.compiler.target>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.jupiter.version>5.11.3</junit.jupiter.version>
+        <rest.assured.version>5.4.0</rest.assured.version>
     </properties>
 
     <dependencies>
+        <!-- RestAssured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 -->
         <!-- ✅ JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -27,6 +43,17 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- JSON (для сериализации/сравнения) -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
         <!-- ✅ TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -38,6 +65,7 @@
 
     <build>
         <plugins>
+            <!-- JUnit 5 runner -->
             <!-- ✅ Компилятор Maven (поддерживает Java 21) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -53,6 +81,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
                 <configuration>
                     <!-- Чтобы поддерживались оба фреймворка -->
                     <useModulePath>false</useModulePath>
