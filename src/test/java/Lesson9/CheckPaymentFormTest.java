@@ -9,6 +9,7 @@ import java.time.Duration;
 public class CheckPaymentFormTest {
     WebDriver driver;
     WebDriverWait wait;
+
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
@@ -16,6 +17,7 @@ public class CheckPaymentFormTest {
         wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         driver.get("https://www.mts.by/");
     }
+
     @Test
     public void testMobilePaymentContinueButton() {
         closeCookieBanner();
@@ -40,6 +42,7 @@ public class CheckPaymentFormTest {
         Assertions.assertTrue(amountField.isDisplayed(),
                 "После нажатия 'Продолжить' не появилось поле суммы или форма оплаты!");
     }
+
     private void closeCookieBanner() {
         try {
             WebElement acceptButton = wait.until(ExpectedConditions.elementToBeClickable(
@@ -53,7 +56,9 @@ public class CheckPaymentFormTest {
             System.out.println("Cookie-баннер не появился — продолжаем.");
         }
     }
+
     @AfterEach
+
     public void tearDown() {
         driver.quit();
     }

@@ -12,6 +12,7 @@ import java.time.Duration;
 
 public class BaseTest {
     protected WebDriver driver;
+
     @BeforeEach
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -27,6 +28,7 @@ public class BaseTest {
         } catch (Exception ignored) {
         }
     }
+
     @AfterEach
     public void tearDown() {
         if (driver != null) {
