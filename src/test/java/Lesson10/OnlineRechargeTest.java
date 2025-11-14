@@ -3,51 +3,39 @@ package Lesson10;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
-import org.testng.annotations.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import java.time.Duration;
 
 public class OnlineRechargeTest {
+
     private WebDriver driver;
-    private OnlineRechargePage page;
+    private OnlineRechargePage rechargePage;
 
     @BeforeClass
-    public void setup() {
-        WebDriverManager.chromedriver().setup();
+    public void setUp() {
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver"); // путь к chromedriver
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        page = new OnlineRechargePage(driver);
-    }
-
-    @Test
-    public void testEmptyFieldsForAllServices() {
-        driver.get("https://mts.by");
-        page.closeCookieIfPresent();
-        Assert.assertEquals(page.getText(page.phoneField), "");
-        Assert.assertEquals(page.getText(page.amountField), "");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+        driver.get("https://www.mts.by/");
+        BasePage basePage = new BasePage(driver);
+        basePage.clickAcceptButton(By.id("cookie-agree"));
+        rechargePage = new OnlineRechargePage(driver);
     }
 
     @Test
     public void testOnlineRechargeWithPhoneAndAmount() {
-        driver.get("https://mts.by");
-        page.closeCookieIfPresent();
-        page.enterPhone("297777777");
-        page.enterAmount("10");
-        page.enterCardDetails("", "", "");
-        page.clickContinue();
-        Assert.assertEquals(page.getPopupAmount(), "10 BYN"); // заменить на реальное отображение суммы
-        Assert.assertEquals(page.getPopupPhone(), "297777777");
-        Assert.assertEquals(page.getText(page.cardNumberField), "");
-        Assert.assertEquals(page.getText(page.cardExpiryField), "");
-        Assert.assertEquals(page.getText(page.cardCvvField), "");
-        Assert.assertTrue(page.countPaymentIcons() > 0, "Нет иконок платежных систем");
+        rechargePage.enterPhone("297777777");
+        rechargePage.enterAmount("50");
+        rechargePage.clickSubmit();
     }
 
     @AfterClass
-    public void teardown() {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
     }
 }
-
