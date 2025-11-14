@@ -10,6 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class OnlineRechargeTest {
     private WebDriver driver;
     private OnlineRechargePage page;
+
     @BeforeClass
     public void setup() {
         WebDriverManager.chromedriver().setup();
@@ -17,10 +18,10 @@ public class OnlineRechargeTest {
         driver.manage().window().maximize();
         page = new OnlineRechargePage(driver);
     }
+
     @Test
     public void testEmptyFieldsForAllServices() {
         driver.get("https://mts.by");
-
         page.closeCookieIfPresent();
         Assert.assertEquals(page.getText(page.phoneField), "");
         Assert.assertEquals(page.getText(page.amountField), "");
@@ -41,6 +42,7 @@ public class OnlineRechargeTest {
         Assert.assertEquals(page.getText(page.cardCvvField), "");
         Assert.assertTrue(page.countPaymentIcons() > 0, "Нет иконок платежных систем");
     }
+
     @AfterClass
     public void teardown() {
         if (driver != null) {

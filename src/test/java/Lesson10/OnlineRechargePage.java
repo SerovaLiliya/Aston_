@@ -3,7 +3,7 @@ package Lesson10;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class OnlineRechargePage extends BasePage {
+public class OnlineRechargePage extends BasePage  {
     public By phoneField = By.id("phone"); // заменить на реальный локатор
     public By amountField = By.id("amount");
     public By cardNumberField = By.id("cardNumber");
