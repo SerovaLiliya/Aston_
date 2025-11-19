@@ -10,8 +10,10 @@
     <name>Postman Echo Tests</name>
 
     <properties>
+        <!-- ✅ Используем Java 21 -->
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.jupiter.version>5.11.3</junit.jupiter.version>
         <rest.assured.version>5.4.0</rest.assured.version>
